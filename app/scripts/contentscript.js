@@ -6,4 +6,6 @@ window.addEventListener("load", function() {
 	var html = document.querySelector('html');
 	html.setAttribute('ng-app', '');
 	html.setAttribute('ng-csp', '');
-})
+
+	angular.bootstrap(html, ['Binged'], []);
+});
