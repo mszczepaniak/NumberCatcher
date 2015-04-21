@@ -11,6 +11,10 @@ window.addEventListener("load", function() {
 	viewport.setAttribute('ng-controller', 'MainController');
 	app.controller('MainController', function ($scope) {});
 
+	app.myDirective = document.createElement('div');
+	myDirective.setAttribute('my-directive','');
+	viewport.appendChild(myDirective);
+
 	angular.bootstrap(html, ['Binged'], []);
 });
 
