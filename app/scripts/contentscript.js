@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener("load", function() {
-	var app = angular.module('Binged', []);
+	var app = angular.module('James', []);
 
 	var html = document.querySelector('html');
 	html.setAttribute('ng-app', '');
@@ -11,10 +11,18 @@ window.addEventListener("load", function() {
 	viewport.setAttribute('ng-controller', 'MainController');
 	app.controller('MainController', function ($scope) {});
 
-	app.myDirective = document.createElement('div');
-	myDirective.setAttribute('my-directive','');
+	var myDirective = document.createElement('div');
+	myDirective.setAttribute('my-directive', '');
 	viewport.appendChild(myDirective);
 
-	angular.bootstrap(html, ['Binged'], []);
+	app.directive('myDirective', function() {
+		return {
+			restrict: 'EA',
+			replace: true,
+			template: '<a href="http://jamesbitte.de"> Visit James</a>'
+		};
+	});
+
+	angular.bootstrap(html, ['James'], []);
 });
 
