@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "NumberCatcher",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Captures phone number from the DOM",
+    "description": "The description of the application"
+  }
+}
