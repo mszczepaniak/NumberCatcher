@@ -49,19 +49,18 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         }
       },
-      livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          '<%= config.app %>/*.html',
-          '<%= config.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= config.app %>/manifest.json',
-          '<%= config.app %>/_locales/{,*/}*.json'
-        ]
+      crx_auto_reload: {
+          files: ['app/scripts/{,*/}*.js', 'app/manifest.json', 'app/templates/{,*/}*.html'],
+          tasks: ['crx_auto_reload']
       }
     },
-
+    // Auto reload
+    crx_auto_reload: {
+      options: {
+        extensionDir: 'app/'
+      },
+      default: {}
+    },
     // Grunt server and debug server setting
     connect: {
       options: {
